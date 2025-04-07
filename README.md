@@ -2,8 +2,21 @@
 
 Hoping this will be my first attempt to build and deploy a little app that I can use to track my reading! There's a chance I will commit to this repo once and then completely forget about it forever, but hopefully that won't happen
 
-# Tech 
-* Written using python 3.13
+# Tech
+* python 3.13
+* terraform 1.11.3
+* AWS
+* Github actions
+
+
+# Formatting / Linting
+* Ruff 0.11.3
+* tflint 0.56.0
+* to add flake 8 / other terraform stuff
+
+# Security scanning
+* tfsec 1.28.13
+* to add swyft and grype
 
 
 # To Do List:
@@ -29,3 +42,8 @@ Hoping this will be my first attempt to build and deploy a little app that I can
     * Front end to show data
     * Something to put data into data base
     * Front end to input data
+
+* Other 
+    * pinning versions of terraform, tflint, tfsec
+
+
