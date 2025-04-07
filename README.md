@@ -11,7 +11,7 @@ Hoping this will be my first attempt to build and deploy a little app that I can
 ## CICD Pipeline
 
 * Build a cicd pipeline to deploy lambda
-    * Linting - flake8, tflint
+    * Linting - flake8, tflint (chekov, tflint? look at cs stuff)
     * Tests - pytest & feature 
     * Terraform plan & apply
     * security scanning
