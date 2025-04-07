@@ -3,8 +3,8 @@ terraform {
   backend "s3" {
     bucket  = "terraform-state"
     region  = "eu-west-2"
-    key     = "s3-github-actions/terraform.tfstate"
-    encrypt = true
+    dynamodb_table = "terraform-state-lock"
+    key            = "terraform-state"
   }
   required_version = ">=1.6.1"
   required_providers {
