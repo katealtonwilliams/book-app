@@ -1,8 +1,7 @@
 # maybe put this into dynamo like on cs?
 terraform {
   backend "s3" {
-    bucket  = "terraform-state"
-    region  = "eu-west-2"
+    region         = "eu-west-2"
     dynamodb_table = "terraform-state-lock"
     key            = "terraform-state"
   }
