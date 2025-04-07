@@ -1,4 +1,5 @@
 def lambda_handler(event, context):
+    addition = 5 + 3
     return {
-        'message': 'hello world!'
+        'message': f'hello world!, {addition}'
     }
