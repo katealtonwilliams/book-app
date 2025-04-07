@@ -32,7 +32,7 @@ Hoping this will be my first attempt to build and deploy a little app that I can
 
 * Create pre commit hooks
     * Ruff / pep8
-    * Terraform linting & tf format
+    * Terraform linting & terraform fmt
     * Only over changed files
     * Unit tests over changed files?
 

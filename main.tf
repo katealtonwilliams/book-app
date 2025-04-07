@@ -22,7 +22,7 @@ resource "aws_iam_policy" "iam_policy_for_lambda" {
   name        = "aws_iam_policy_for_terraform_aws_lambda_role"
   path        = "/"
   description = "AWS IAM policy for managing aws lambda role"
-  policy = jsondecode({
+  policy = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
       {
@@ -45,7 +45,7 @@ resource "aws_iam_role_policy_attachment" "attach_iam_policy_to_iam_role" {
 
 
 resource "aws_lambda_function" "terraform_lambda_func" {
-  s3_bucket     = "lambda-artifacts-bucket"
+  s3_bucket     = "terraform-state-bucket-aebb0499259047588b07a8b0382e8026"
   s3_key        = "lambda_src.zip"
   function_name = "first-lambda-function"
   role          = aws_iam_role.lambda_role.arn

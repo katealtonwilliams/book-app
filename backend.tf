@@ -1,15 +1,18 @@
-# maybe put this into dynamo like on cs?
 terraform {
+  required_version = ">= 1.6.1"
+
   backend "s3" {
+    bucket         = "terraform-state-bucket-aebb0499259047588b07a8b0382e8026"
+    key            = "terraform.tfstate"
     region         = "eu-west-2"
     dynamodb_table = "terraform-state-lock"
-    key            = "terraform-state"
+    encrypt        = true
   }
-  required_version = ">=1.6.1"
+
   required_providers {
     aws = {
-      version = ">= 5.43.0"
       source  = "hashicorp/aws"
+      version = ">= 5.43.0"
     }
   }
 }
