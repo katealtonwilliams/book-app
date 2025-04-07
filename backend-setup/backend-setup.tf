@@ -3,26 +3,26 @@ provider "aws" {
   shared_credentials_files = ["/home/kate/.aws/credentials"]
 }
 
-resource "aws_s3_bucket" "tf_state" {
-  bucket = "terraform-state-bucket"
+resource "aws_s3_bucket" "dev_tf_state" {
+  bucket = "terraform-state-bucket-aebb0499259047588b07a8b0382e8026"
 }
 
-resource "aws_s3_bucket_ownership_controls" "tf_state" {
-  bucket = aws_s3_bucket.tf_state.id
+resource "aws_s3_bucket_ownership_controls" "dev_tf_state" {
+  bucket = aws_s3_bucket.dev_tf_state.id
   rule {
     object_ownership = "BucketOwnerPreferred"
   }
 }
 
-resource "aws_s3_bucket_acl" "tf_state" {
-  depends_on = [aws_s3_bucket_ownership_controls.tf_state]
+resource "aws_s3_bucket_acl" "dev_tf_state" {
+  depends_on = [aws_s3_bucket_ownership_controls.dev_tf_state]
 
-  bucket = aws_s3_bucket.tf_state.id
+  bucket = aws_s3_bucket.dev_tf_state.id
   acl    = "private"
 }
 
-resource "aws_s3_bucket_public_access_block" "tf_state" {
-  bucket = aws_s3_bucket.tf_state.id
+resource "aws_s3_bucket_public_access_block" "dev_tf_state" {
+  bucket = aws_s3_bucket.dev_tf_state.id
 
   block_public_acls       = true
   block_public_policy     = true
@@ -30,8 +30,8 @@ resource "aws_s3_bucket_public_access_block" "tf_state" {
   restrict_public_buckets = true
 }
 
-resource "aws_s3_bucket_versioning" "tf_state_versioning" {
-  bucket = aws_s3_bucket.tf_state.id
+resource "aws_s3_bucket_versioning" "dev_tf_state_versioning" {
+  bucket = aws_s3_bucket.dev_tf_state.id
   versioning_configuration {
     status = "Enabled"
   }
@@ -43,8 +43,8 @@ resource "aws_kms_key" "mykey" {
   deletion_window_in_days = 7
 }
 
-resource "aws_s3_bucket_server_side_encryption_configuration" "tf_state" {
-  bucket = aws_s3_bucket.tf_state.id
+resource "aws_s3_bucket_server_side_encryption_configuration" "dev_tf_state" {
+  bucket = aws_s3_bucket.dev_tf_state.id
 
   rule {
     apply_server_side_encryption_by_default {
