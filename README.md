@@ -23,8 +23,16 @@ Hoping this will be my first attempt to build and deploy a little app that I can
 
 ## CICD Pipeline
 
-* Build a cicd pipeline to deploy lambda
+
+* Terraform
+    * Change deprecated things
+    * Make names better
+    * use more env variables where needed
     * Find out how best to save the back end terraform stuff
+
+* Build a cicd pipeline to deploy lambda
+    
+    * write a tidy up pipeline
     * Only run over directories with changes
     * Linting - flake8, tflint (chekov, tflint? look at cs stuff)
     * Tests - pytest & feature 

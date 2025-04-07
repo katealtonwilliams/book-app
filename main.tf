@@ -34,7 +34,8 @@ resource "aws_iam_policy" "iam_policy_for_lambda" {
           "s3:GetBucketLocation",
           "s3:ListBucket"
         ],
-        "Resource" : "arn:aws:*:*:*:*"
+        "Resource" : ["arn:aws:logs:*:*:*",
+        "arn:aws:s3:::terraform-state-bucket-aebb0499259047588b07a8b0382e8026"]
         "Effect" : "Allow"
       }
     ]
