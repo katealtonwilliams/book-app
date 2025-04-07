@@ -31,8 +31,8 @@ Hoping this will be my first attempt to build and deploy a little app that I can
     * front end end to end tests
 
 * Create pre commit hooks
-    * Ruff / black
-    * Terraform linting
+    * Ruff / pep8
+    * Terraform linting & tf format
     * Only over changed files
     * Unit tests over changed files?
 
