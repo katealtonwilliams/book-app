@@ -1,6 +1,7 @@
 # add some logging or something so can see what failure is
 # change name of this file
 # seperate into different steps
+# docker container?
 name: Terraform Deploy
 
 on:
@@ -80,6 +81,6 @@ jobs:
       run: terraform plan -out=tfplan
 
     - name: 'Terraform Apply'
-      if: ${{ github.event.inputs.do-plan }} == true
+      if: ${{ github.event.inputs.do-plan }}
       run: terraform apply -auto-approve tfplan
 
