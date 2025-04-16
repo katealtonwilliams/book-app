@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "eu-west-2"
+}
+
 resource "aws_s3_bucket" "state_bucket" {
   #checkov:skip=CKV_AWS_145: Lifecycle configuration not required for TF state bucket
   #checkov:skip=CKV2_AWS_61: Lifecycle configuration not required for TF state bucket
