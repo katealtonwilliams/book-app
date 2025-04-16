@@ -2,6 +2,16 @@ provider "aws" {
   region = "eu-west-2"
 }
 
+terraform {
+  required_version = ">=0.13.0"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.43.0"
+    }
+  }
+}
+
 resource "aws_s3_bucket" "state_bucket" {
   #checkov:skip=CKV_AWS_145: Lifecycle configuration not required for TF state bucket
   #checkov:skip=CKV2_AWS_61: Lifecycle configuration not required for TF state bucket

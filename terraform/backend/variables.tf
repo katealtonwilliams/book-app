@@ -1,8 +1,4 @@
-variable "aws_region" {
-  type    = string
-  default = "eu-west-2"
-}
-
+#see if can add region variable
 variable "state_bucket" {
   type    = string
   default = "terraform_state_c76b7076-4949-4ddc-830f-bb61d5fb43fe"
