@@ -17,6 +17,7 @@ on:
 jobs:
   terraform:
     name: 'Terraform Lint, Security Check, and Deploy'
+    # choose ubuntu version
     runs-on: ubuntu-latest
 
     defaults:

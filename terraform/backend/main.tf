@@ -23,7 +23,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "state_bucket_encr
 }
 
 resource "aws_s3_bucket_acl" "state_bucket_acl" {
-  depends_on = [aws_s3_bucket_ownership_controls.state_bucket_acl_ownershi]
+  depends_on = [aws_s3_bucket_ownership_controls.state_bucket_acl_ownership]
   bucket     = aws_s3_bucket.state_bucket.id
   acl        = "private"
 }
