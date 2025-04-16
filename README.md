@@ -8,20 +8,30 @@ Hoping this will be my first attempt to build and deploy a little app that I can
 
 # To Do List:
 
-## CICD Pipeline
+* Build terraform backend
+   * back end code - complete
+   * cicd pipeline to deploy
+   * include linting & security scan
+   * run manually when needed
+
+* Build proper lambda code
+    * update so can be stored in the cloud
+    * just in main for now, create modules when needed
+    * add logging
 
 * Build a cicd pipeline to deploy lambda
+    * rebuilds when python code updated
     * Linting - flake8, tflint
     * Tests - pytest & feature 
     * Terraform plan & apply
     * security scanning
     * front end end to end tests
+    * only over changes files
 
 * Create pre commit hooks
     * Ruff / black
     * Terraform linting
     * Only over changed files
-    * Unit tests over changed files?
 
 * Lambda function
     * Implement logging
