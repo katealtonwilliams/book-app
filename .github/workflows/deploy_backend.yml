@@ -1,11 +1,12 @@
 # add some logging or something so can see what failure is
 # change name of this file
+# seperate into different steps
 name: Terraform Deploy
 
 on:
     workflow_dispatch:
       inputs:
-        plan-only:
+        do-plan:
           description: 'Do terraform apply'
           type: boolean
           required: true
@@ -15,8 +16,8 @@ on:
           required: true
 
 jobs:
-  terraform:
-    name: 'Terraform Lint, Security Check, and Deploy'
+  lint-sec:
+    name: 'Lint & Security Check'
     # choose ubuntu version
     runs-on: ubuntu-latest
 
@@ -79,6 +80,6 @@ jobs:
       run: terraform plan -out=tfplan
 
     - name: 'Terraform Apply'
-      if: ${{ github.event.inputs.plan-only == 'false' }}
+      if: ${{ github.event.inputs.do-plan == true }}
       run: terraform apply -auto-approve tfplan
 
