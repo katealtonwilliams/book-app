@@ -75,7 +75,6 @@ resource "aws_dynamodb_table" "dynamodb_tfstate_lock" {
 
   name           = var.state_table
   hash_key       = "LockID"
-  billing_mode   = "PAY_PER_REQUEST"
   read_capacity  = 20
   write_capacity = 20
 
