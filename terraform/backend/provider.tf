@@ -4,10 +4,10 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = var.state_bucket
+    bucket         = "terraform_state_c76b7076-4949-4ddc-830f-bb61d5fb43fe"
     key            = "terraform.tfstate"
-    region         = var.aws_region
-    dynamodb_table = var.state_table
+    region         = "eu-west-2"
+    dynamodb_table = "terraform_state_lock"
     encrypt        = true
   }
   required_version = ">=0.13.0"
