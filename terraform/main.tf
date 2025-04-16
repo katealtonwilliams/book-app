@@ -1,8 +1,3 @@
-provider "aws" {
-    region = "eu-west-2"
-    shared_credentials_files = ["/home/kate/.aws/credentials"]
-}
-
 resource "aws_iam_role" "lambda_role" {
     name = "terraform_aws_lambda_role"
     assume_role_policy = <<EOF
