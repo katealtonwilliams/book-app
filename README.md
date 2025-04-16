@@ -16,6 +16,7 @@ Hoping this will be my first attempt to build and deploy a little app that I can
    * check the chekov skips and see if needed for back end
 
 * Build proper lambda code
+    * create vpc and ec instance
     * update so can be stored in the cloud
     * just in main for now, create modules when needed
     * add logging
@@ -28,6 +29,7 @@ Hoping this will be my first attempt to build and deploy a little app that I can
     * security scanning
     * front end end to end tests
     * only over changes files
+    * dockerise?
 
 * Create pre commit hooks
     * Ruff / black
