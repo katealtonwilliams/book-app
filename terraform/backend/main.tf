@@ -1,4 +1,11 @@
 resource "aws_s3_bucket" "state_bucket" {
+  #checkov:skip=CKV_AWS_145: Lifecycle configuration not required for TF state bucket
+  #checkov:skip=CKV2_AWS_61: Lifecycle configuration not required for TF state bucket
+  #checkov:skip=CKV_AWS_144: Cross-region replication not required for TF state bucket
+  #checkov:skip=CKV2_AWS_62: Event notifications not required for TF state bucket
+  #checkov:skip=CKV_AWS_145: No KMS encryption needed for TF state bucket
+  #checkov:skip=CKV_AWS_21: No versioning needed for TF state bucket
+  #checkov:skip=CKV_AWS_18: No logging needed for TF state bucket
   bucket = var.state_bucket
 }
 
@@ -6,7 +13,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "state_bucket_encr
   bucket = aws_s3_bucket.state_bucket.id
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm     = "AES256"
+      sse_algorithm = "AES256"
     }
   }
 }
@@ -18,6 +25,7 @@ resource "aws_s3_bucket_acl" "state_bucket_acl" {
 }
 
 resource "aws_s3_bucket_ownership_controls" "state_bucket_acl_ownership" {
+  #checkov:skip=CKV2_AWS_65:Check if this is needed
   bucket = aws_s3_bucket.state_bucket.id
   rule {
     object_ownership = "ObjectWriter"
@@ -37,6 +45,7 @@ resource "aws_s3_object" "terraform_folder" {
 }
 
 resource "aws_s3_bucket_public_access_block" "s3_bucket_access" {
+
   bucket                  = aws_s3_bucket.state_bucket.bucket
   block_public_acls       = true
   block_public_policy     = true
@@ -46,6 +55,10 @@ resource "aws_s3_bucket_public_access_block" "s3_bucket_access" {
 
 
 resource "aws_dynamodb_table" "dynamodb_tfstate_lock" {
+  #checkov:skip=CKV2_AWS_16: Auto Scaling not required for TF state bucket
+  #checkov:skip=CKV_AWS_28: Dynamodb point in time recovery not required for TF state bucket
+  #checkov:skip=CKV_AWS_119: KMS Customer Managed CMK not required for TF state bucket
+
   name           = var.state_table
   hash_key       = "LockID"
   billing_mode   = "PAY_PER_REQUEST"

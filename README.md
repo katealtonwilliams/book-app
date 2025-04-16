@@ -13,6 +13,7 @@ Hoping this will be my first attempt to build and deploy a little app that I can
    * cicd pipeline to deploy
    * include linting & security scan
    * run manually when needed
+   * check the chekov skips and see if needed for back end
 
 * Build proper lambda code
     * update so can be stored in the cloud
