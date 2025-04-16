@@ -23,8 +23,9 @@ jobs:
 
     env:
       AWS_REGION: 'eu-west-2'
+      # sort out versions here
       TF_VERSION: '1.4.0'
-      TFLINT_VERSION: '0.56.1'
+      TFLINT_VERSION: '0.46.0'
       CHECKOV_VERSION: '3.2.405'
 
     steps:
