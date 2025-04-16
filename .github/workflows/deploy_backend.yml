@@ -2,15 +2,15 @@ name: Terraform Deploy
 
 on:
     workflow_dispatch:
-        inputs:
-            plan-only:
-                description: 'Do terraform apply'
-                type: boolean
-                required: true
-                default: false
-            directory:
-                description: 'Directory where terraform is'
-                required: true
+      inputs:
+        plan-only:
+          description: 'Do terraform apply'
+          type: boolean
+          required: true
+          default: false
+        directory:
+          description: 'Directory where terraform is'
+          required: true
 
 jobs:
   terraform:
