@@ -1,3 +1,5 @@
+# add some logging or something so can see what failure is
+# change name of this file
 name: Terraform Deploy
 
 on:
