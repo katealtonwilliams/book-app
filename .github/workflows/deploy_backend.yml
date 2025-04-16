@@ -80,6 +80,6 @@ jobs:
       run: terraform plan -out=tfplan
 
     - name: 'Terraform Apply'
-      if: ${{ github.event.inputs.do-plan == true }}
+      if: ${{ github.event.inputs.do-plan }} == true
       run: terraform apply -auto-approve tfplan
 
